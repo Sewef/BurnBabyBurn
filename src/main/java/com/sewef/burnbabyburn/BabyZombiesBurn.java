@@ -28,7 +28,7 @@ public class BabyZombiesBurn {
 		if (event.getEntity() instanceof EntityZombie && !(event.getEntity() instanceof EntityHusk)
 				&& (zombie = (EntityZombie) event.getEntity()).getEntityWorld().isDaytime() && !zombie.getEntityWorld().isRemote && zombie.isChild()) {
 			BlockPos blockpos;
-			float f = zombie.getBrightness();
+			float f = zombie.getBrightness(0);
 			BlockPos blockPos = blockpos = zombie.getRidingEntity() instanceof EntityBoat ? new BlockPos(zombie.posX,
 					(double) Math.round(zombie.posY), zombie.posZ).up() : new BlockPos(zombie.posX, (double) Math.round(zombie.posY), zombie.posZ);
 			if (f > 0.5f && zombie.getEntityWorld().rand.nextFloat() * 30.0f < (f - 0.4f) * 2.0f && zombie.getEntityWorld().canSeeSky(blockpos)) {
