@@ -1,0 +1,16 @@
+[
+{
+  "modid": "burnbabyburn",
+  "name": "BurnBabyBurn",
+  "description": "Make Baby Zombies furning at the sunlight!",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "https://minecraft.curseforge.com/projects/burnbabyburn",
+  "updateUrl": "",
+  "authorList": ["Sewef"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
