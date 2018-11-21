@@ -26,17 +26,17 @@ public class BabyZombiesBurn {
 	public void entityUpdate(LivingEvent.LivingUpdateEvent event) {
 		EntityZombie zombie;
 		if (event.getEntity() instanceof EntityZombie && !(event.getEntity() instanceof EntityHusk)
-				&& (zombie = (EntityZombie) event.getEntity()).getEntityWorld().isDaytime() && !zombie.getEntityWorld().isRemote && zombie.isChild()) {
+				&& (zombie = (EntityZombie) event.getEntity()).world.isDaytime() && !zombie.world.isRemote && zombie.isChild()) {
 			BlockPos blockpos;
 			float f = zombie.getBrightness();
 			BlockPos blockPos = blockpos = zombie.getRidingEntity() instanceof EntityBoat ? new BlockPos(zombie.posX,
 					(double) Math.round(zombie.posY), zombie.posZ).up() : new BlockPos(zombie.posX, (double) Math.round(zombie.posY), zombie.posZ);
-			if (f > 0.5f && zombie.getEntityWorld().rand.nextFloat() * 30.0f < (f - 0.4f) * 2.0f && zombie.getEntityWorld().canSeeSky(blockpos)) {
+			if (f > 0.5f && zombie.world.rand.nextFloat() * 30.0f < (f - 0.4f) * 2.0f && zombie.world.canSeeSky(blockpos)) {
 				boolean flag = true;
 				ItemStack itemstack = zombie.getItemStackFromSlot(EntityEquipmentSlot.HEAD);
 				if (!itemstack.isEmpty()) {
 					if (itemstack.isItemStackDamageable()) {
-						itemstack.setItemDamage(itemstack.getItemDamage() + zombie.getEntityWorld().rand.nextInt(2));
+						itemstack.setItemDamage(itemstack.getItemDamage() + zombie.world.rand.nextInt(2));
 						if (itemstack.getItemDamage() >= itemstack.getMaxDamage()) {
 							zombie.renderBrokenItemStack(itemstack);
 							zombie.setItemStackToSlot(EntityEquipmentSlot.HEAD, ItemStack.EMPTY);
