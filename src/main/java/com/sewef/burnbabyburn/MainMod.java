@@ -7,10 +7,10 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = MainMod.MODID, version = MainMod.VERSION, serverSideOnly = true, acceptableRemoteVersions = "*")
+@Mod(modid = MainMod.MODID, version = MainMod.VERSION, acceptableRemoteVersions = "*")
 public class MainMod {
 	public static final String MODID = "burnbabyburn";
-	public static final String VERSION = "1.3";
+	public static final String VERSION = "1.5";
 
         private static Logger logger;
         
